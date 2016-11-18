@@ -1,0 +1,11 @@
+@import 'settings/colors';
+@import 'settings/sizes';
+@import 'tools/mixins';
+
+.app__header {
+  border-bottom: 1px solid $border-color;
+  background-color: $light-bg;
+  padding-top: $gutter;
+  padding-bottom: $gutter;
+  margin-bottom: $gutter;
+}

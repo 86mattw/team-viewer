@@ -1,0 +1,22 @@
+@import 'settings/colors';
+@import 'settings/sizes';
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: $body-bg;
+}
+
+h1 {
+  @include font-size($header1-size);
+}
+
+h2 {
+  @include font-size($header2-size);
+}
+
+h3 {
+  @include font-size($header3-size);
+}

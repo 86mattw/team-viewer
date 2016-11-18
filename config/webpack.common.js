@@ -2,6 +2,7 @@ var webpack =             require('webpack');
 var HtmlWebpackPlugin =   require('html-webpack-plugin');
 var ExtractTextPlugin =   require('extract-text-webpack-plugin');
 var helpers =             require('./helpers');
+var path =                require('path');
 
 module.exports = {
   entry: {
@@ -39,11 +40,20 @@ module.exports = {
         loader: 'raw'
       },
       {
-        test: /\.scss$/,
+        test: /\.component\.scss$/,
         exclude: /node_modules/,
-        loaders: ['raw-loader', 'sass-loader']
+        loaders: ['raw', 'sass']
+      },
+      {
+        test: /\.scss$/,
+        exclude: /(node_modules|app)/,
+        loaders: ['style', 'css', 'sass']
       }
     ]
+  },
+
+  sassLoader: {
+    includePaths: ['./src/sass', './node_modules/bootstrap/scss']
   },
 
   plugins: [
